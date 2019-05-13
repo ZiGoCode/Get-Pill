@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 declare const $;
 declare const Chart;
-declare const App: any;
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +13,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.initialLodeChartJS();
-    App.initialLodePage();
   }
 
   private initialLodeChartJS() {

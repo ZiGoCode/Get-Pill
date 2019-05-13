@@ -4,6 +4,7 @@ import { BsDropdownModule } from 'ngx-bootstrap';
 import { AuthNavberComponent } from './components/auth-navber/auth-navber.component';
 import { AuthSidebarComponent } from './components/auth-sidebar/auth-sidebar.component';
 import { AuthContentComponent } from './components/auth-content/auth-content.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { AuthContentComponent } from './components/auth-content/auth-content.com
   ],
   imports: [
     CommonModule,
-    BsDropdownModule
+    BsDropdownModule,
+    RouterModule
   ],
   exports: [
     BsDropdownModule,

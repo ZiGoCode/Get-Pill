@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppURL } from 'src/app/app.url';
+import { AuthURL } from 'src/app/authentication/authentication.url';
 
 @Component({
   selector: 'app-auth-navber',
@@ -6,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auth-navber.component.css']
 })
 export class AuthNavberComponent implements OnInit {
+
+  AppURL = AppURL;
+  AuthURL = AuthURL;
 
   constructor() { }
 

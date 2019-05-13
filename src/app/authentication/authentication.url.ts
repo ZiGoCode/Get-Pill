@@ -1,4 +1,5 @@
 export const AuthURL = {
     Dashboard: 'dashboard',
-    Setting: 'setting'
+    Setting: 'setting',
+    Profile: 'profile'
 };
