@@ -47,7 +47,7 @@ export class LoginComponent implements ILoginComponent {
 
   private initialCreateFomrData() {
     this.form = this.builder.group({
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
       remember: [true]
     });
