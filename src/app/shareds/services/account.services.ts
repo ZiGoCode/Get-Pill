@@ -14,7 +14,7 @@ export class AccountService {
             lastname: 'Manpati',
             email: 'ng@gmail.com',
             password: '123456',
-            position: 'Developer',
+            position: 'Frontend Developer',
             image: 'https://scontent.fbkk2-6.fna.fbcdn.net/v/t1.0-9/53862965_1980693202028225_645704180689797120_n.jpg?_nc_cat=111&_nc_eui2=AeE_Tw556jOCff7M9g0eyxMDxtCDgMKzSzP9mdEPoS2TBe_ErjfZhtXd51__cSSVHr2Q7BtScHl_5UBqetgAC3qB_5_N9DwVE_P7wEJi4HqTTg&_nc_ht=scontent.fbkk2-6.fna&oh=10759b2f5cade4c1e352283a1dd9d9b4&oe=5D600FFF',
             created: new Date(),
             updated: new Date(),
@@ -25,7 +25,7 @@ export class AccountService {
             lastname: 'Manpati',
             email: 'fn@gmail.com',
             password: '123456',
-            position: 'Frontend Developer',
+            position: 'Backend Developer',
             created: new Date(),
             updated: new Date(),
         }
