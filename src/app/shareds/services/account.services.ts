@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { IRegister } from 'src/app/components/register/register.interface';
 import { ILogin } from 'src/app/components/login/iogin.interface';
-import { reject } from 'q';
+import { IProfile } from 'src/app/authentication/components/profile/profile.interface';
 
 @Injectable()
 
@@ -30,6 +30,19 @@ export class AccountService {
             updated: new Date(),
         }
     ];
+
+    onUpdateProfile(accessToken: string, model: IProfile) {
+        return new Promise((resolve, reject) => {
+            const userProfile = this.mockUserAccount.find(user => user.id == accessToken);
+            if (!userProfile) return reject({ Message: 'ไม่มีผู้ใช้ในระบบ' });
+            userProfile.firstname = model.firstname;
+            userProfile.lastname = model.lastname;
+            userProfile.position = model.position;
+            userProfile.image = model.image;
+            userProfile.updated = new Date();
+            resolve(userProfile);
+        })
+    }
 
     getUserLogin(accessToken: string) {
         return new Promise<IAccount>((resolve, reject) => {
