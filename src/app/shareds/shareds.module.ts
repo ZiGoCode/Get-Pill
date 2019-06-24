@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BsDropdownModule } from 'ngx-bootstrap';
+import { BsDropdownModule, ModalModule } from 'ngx-bootstrap';
 import { AuthNavberComponent } from './components/auth-navber/auth-navber.component';
 import { AuthSidebarComponent } from './components/auth-sidebar/auth-sidebar.component';
 import { AuthContentComponent } from './components/auth-content/auth-content.component';
@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AlertServices } from './services/alert.services';
 import { AccountService } from './services/account.services';
+import { ValidatorsService } from './services/validators.service';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AccountService } from './services/account.services';
   ],
   imports: [
     CommonModule,
-    BsDropdownModule,
+    BsDropdownModule.forRoot(),
+    ModalModule.forRoot(),
     RouterModule,
     ReactiveFormsModule,
     FormsModule   
@@ -29,11 +31,13 @@ import { AccountService } from './services/account.services';
     AuthSidebarComponent,
     AuthContentComponent,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    ModalModule
   ],
   providers: [
     AlertServices,
-    AccountService
+    // AccountService,
+    ValidatorsService
   ]
 })
 export class SharedsModule { }

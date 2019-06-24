@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { IProfileComponent } from './profile.interface';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AccountService } from 'src/app/shareds/services/account.services';
 import { AuthenService } from 'src/app/services/authen.service';
 import { AlertServices } from 'src/app/shareds/services/alert.services';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-profile',
@@ -13,7 +14,7 @@ import { AlertServices } from 'src/app/shareds/services/alert.services';
 export class ProfileComponent implements OnInit, IProfileComponent {
 
   form: FormGroup;
-
+  modalRef: BsModalRef;
   positionItems: any[] = [
     'Frontend Developer',
     'Backend Developer'
@@ -23,7 +24,8 @@ export class ProfileComponent implements OnInit, IProfileComponent {
     private builder: FormBuilder,
     private account: AccountService,
     private authen: AuthenService,
-    private alert: AlertServices
+    private alert: AlertServices,
+    private modalService: BsModalService
   ) {
     this.initialCreateFormData();
     this.initialLoadUpdateFormData();
@@ -54,6 +56,10 @@ export class ProfileComponent implements OnInit, IProfileComponent {
     reader.addEventListener('load', () => {
       imageControl.setValue(reader.result);
     });
+  }
+
+  openModal(template: TemplateRef<any>){
+    this.modalRef = this.modalService.show(template);
   }
 
   private initialCreateFormData() {
